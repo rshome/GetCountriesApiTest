@@ -23,9 +23,9 @@ namespace GetCountriesApiTest
         }
         
         [Then(@"the api country response returns (.*)")]
-        public void ThenTheApiCountryResponseReturns(int p0)
+        public void ThenTheApiCountryResponseReturns(int ccount)
         {
-
+            Assert.AreEqual(ccount, countries.CountriesCount());
         }
     }
 }
