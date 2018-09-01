@@ -13,19 +13,19 @@ namespace GetCountriesApiTest
         [Given(@"I generate a restful request for countries")]
         public void GivenIGenerateARestfulRequestForCountries()
         {
-
+            countries.Status();
         }
         
         [When(@"I receive a successful country response (.*)")]
-        public void WhenIReceiveASuccessfulCountryResponse(int p0)
+        public void WhenIReceiveASuccessfulCountryResponse(int cresponse)
         {
-            Assert.AreEqual(200, countries.GetCountries());
+            Assert.AreEqual(cresponse, countries.SCode);
         }
         
         [Then(@"the api country response returns (.*)")]
         public void ThenTheApiCountryResponseReturns(int ccount)
         {
-            Assert.AreEqual(ccount, countries.CountriesCount());
+            Assert.AreEqual(ccount, countries.countriesCnt);
         }
     }
 }
